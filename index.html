@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll</title>
-
-     <script>
+    <title>Die lit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <script>
         window.addEventListener("load", function() {
             console.log(".");
-
             let inFrame;
-
             try {
                 inFrame = window !== top;
             } catch (e) {
                 inFrame = true;
             }
-
             if (inFrame) {
                 console.log("..");
                 return;
@@ -24,34 +22,28 @@
 
             const defaultTitle = "404";
             const defaultIcon = "https://www.google.com/favicon.ico";
-
             const title = localStorage.getItem("siteTitle") || defaultTitle;
             const icon = localStorage.getItem("faviconURL") || defaultIcon;
-
             const iframeSrc = "https://dielit.pages.dev/";
 
             const popup = window.open("", "_blank");
-
             if (!popup || popup.closed) {
                 alert("Failed to load automask. Please allow popups and try again.");
                 return;
             }
-
             popup.document.head.innerHTML = `<title>${title}</title><link rel="icon" href="${icon}">`;
             popup.document.body.innerHTML = `<iframe style="height: 100%; width: 100%; border: none; position: fixed; top: 0; right: 0; left: 0; bottom: 0;" src="${iframeSrc}"></iframe>`;
-
             window.location.replace("https://bisd.schoology.com/home"); 
             console.log("...");
         });
     </script>
-    
+
     <!-- Add Firebase as a Module -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
         import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
         import { getAuth } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
         
-        // Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyCD_oZNzv7tY5h5vAIJJsq1DMg9ir9ArAA",
             authDomain: "loll-657f3.firebaseapp.com",
@@ -63,7 +55,6 @@
             measurementId: "G-Z597LSHMCM"
         };
 
-        // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);
         const credentialsRef = ref(database, 'credentials');
@@ -82,6 +73,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Press Start 2P', cursive;
         }
 
         body {
@@ -89,7 +81,6 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #4e54c8, #8f94fb);
             background-size: 400% 400%;
             animation: gradientAnimation 10s ease infinite;
@@ -109,7 +100,7 @@
         }
 
         .credentials-card h2 {
-            font-size: 1.5em;
+            font-size: 1.2em;
             color: #4e54c8;
             margin-bottom: 20px;
         }
@@ -127,7 +118,7 @@
         }
 
         .credential-label {
-            font-size: 1em;
+            font-size: 0.8em;
             color: #4e54c8;
             font-weight: bold;
             letter-spacing: 1px;
@@ -135,7 +126,7 @@
         }
 
         .credential-value {
-            font-size: 1.1em;
+            font-size: 0.9em;
             color: #555;
             margin-top: 5px;
             font-weight: bold;
@@ -143,7 +134,7 @@
 
         .copy-btn {
             padding: 5px 15px;
-            font-size: 0.9em;
+            font-size: 0.7em;
             font-weight: bold;
             color: #fff;
             background-color: #4e54c8;
@@ -155,13 +146,6 @@
 
         .copy-btn:hover {
             background-color: #3e44a1;
-        }
-
-        .credential-text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            flex: 1;
         }
 
         .modal {
@@ -190,27 +174,6 @@
             color: #4e54c8;
         }
 
-        .modal-content button {
-            background-color: #4e54c8;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1em;
-        }
-
-        .modal-content button:hover {
-            background-color: #3e44a1;
-        }
-
-        .button-group {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            gap: 15px;
-        }
-
         .button-group button {
             padding: 10px 20px;
             background-color: #4e54c8;
@@ -218,6 +181,7 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
+            font-size: 0.8em;
             transition: background 0.3s ease;
         }
 
@@ -265,7 +229,7 @@
     </div>
 
     <div class="button-group">
-        <button onclick="window.open('https://fwee.limana.rs/#/client/MQBjAG15c3Fs', '_blank')">Guacamole</button>
+        <button onclick="window.open('https://dielit.pages.dev/guac.html', '_blank')">Guacamole</button>
     </div>
 
     <script>
@@ -289,8 +253,7 @@
         }
 
         function closeModal() {
-            const modal = document.getElementById("customAlertModal");
-            modal.style.display = "none";
+            document.getElementById("customAlertModal").style.display = "none";
         }
     </script>
 </body>
